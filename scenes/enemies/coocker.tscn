@@ -1,0 +1,140 @@
+[gd_scene format=3 uid="uid://bsxupkwbwjo7m"]
+
+[ext_resource type="Script" uid="uid://b7sa3mvb5j6n8" path="res://scripts/enemies/coocker.gd" id="1_ytimd"]
+[ext_resource type="PackedScene" uid="uid://cj8x4q6yao82w" path="res://scenes/weapons/coocker_weapon.tscn" id="2_tqacv"]
+[ext_resource type="Texture2D" uid="uid://bh0a2e7dlok2g" path="res://assets/Characters_sprites/Char coocker/Character 5.png" id="2_ytimd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tqacv"]
+atlas = ExtResource("2_ytimd")
+region = Rect2(0, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mxvhw"]
+atlas = ExtResource("2_ytimd")
+region = Rect2(64, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_552lj"]
+atlas = ExtResource("2_ytimd")
+region = Rect2(128, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jbb44"]
+atlas = ExtResource("2_ytimd")
+region = Rect2(192, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rr5sc"]
+atlas = ExtResource("2_ytimd")
+region = Rect2(256, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h0s0h"]
+atlas = ExtResource("2_ytimd")
+region = Rect2(320, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ynqc"]
+atlas = ExtResource("2_ytimd")
+region = Rect2(384, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sygoc"]
+atlas = ExtResource("2_ytimd")
+region = Rect2(448, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hmiwp"]
+atlas = ExtResource("2_ytimd")
+region = Rect2(512, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_788dp"]
+atlas = ExtResource("2_ytimd")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j5eki"]
+atlas = ExtResource("2_ytimd")
+region = Rect2(64, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1aw54"]
+atlas = ExtResource("2_ytimd")
+region = Rect2(128, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ldkr6"]
+atlas = ExtResource("2_ytimd")
+region = Rect2(192, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1k37w"]
+atlas = ExtResource("2_ytimd")
+region = Rect2(256, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3min1"]
+atlas = ExtResource("2_ytimd")
+region = Rect2(320, 128, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ed77w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tqacv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mxvhw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_552lj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jbb44")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rr5sc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h0s0h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ynqc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sygoc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hmiwp")
+}],
+"loop": false,
+"name": &"die",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_788dp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j5eki")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1aw54")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ldkr6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1k37w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3min1")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tcxad"]
+size = Vector2(17, 29)
+
+[node name="Coocker" type="CharacterBody2D" unique_id=509939734 groups=["enemies"]]
+collision_layer = 2
+script = ExtResource("1_ytimd")
+weapon_coocker = ExtResource("2_tqacv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1176714054]
+sprite_frames = SubResource("SpriteFrames_ed77w")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=925003334]
+position = Vector2(-1.5, 1.5)
+shape = SubResource("RectangleShape2D_tcxad")

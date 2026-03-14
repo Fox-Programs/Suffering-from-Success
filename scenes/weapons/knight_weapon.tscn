@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://b2rkr85qdt66n"]
+
+[ext_resource type="Texture2D" uid="uid://cwn60yw8to64x" path="res://assets/dungeon_asset.png" id="1_b3tu7"]
+[ext_resource type="Script" uid="uid://5fncjvic62r2" path="res://scripts/weapons/knight_weapon.gd" id="1_kdj7h"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kdj7h"]
+radius = 15.033297
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1c7l4"]
+atlas = ExtResource("1_b3tu7")
+region = Rect2(640, 800, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t2jio"]
+atlas = ExtResource("1_b3tu7")
+region = Rect2(672, 800, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4i4lt"]
+atlas = ExtResource("1_b3tu7")
+region = Rect2(704, 800, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8hocb"]
+atlas = ExtResource("1_b3tu7")
+region = Rect2(768, 800, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3c1g5"]
+atlas = ExtResource("1_b3tu7")
+region = Rect2(832, 800, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hrj58"]
+atlas = ExtResource("1_b3tu7")
+region = Rect2(896, 800, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_76xot"]
+atlas = ExtResource("1_b3tu7")
+region = Rect2(960, 800, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1560a"]
+atlas = ExtResource("1_b3tu7")
+region = Rect2(1024, 800, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qiulo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1c7l4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t2jio")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4i4lt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8hocb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3c1g5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hrj58")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_76xot")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1560a")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
+[node name="knight_weapon" type="Area2D" unique_id=377618912]
+collision_mask = 4
+script = ExtResource("1_kdj7h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1694393294]
+shape = SubResource("CircleShape2D_kdj7h")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1598919901]
+sprite_frames = SubResource("SpriteFrames_qiulo")
+autoplay = "default"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

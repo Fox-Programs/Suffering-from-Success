@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://b7t23cc2mirqo"]
+
+[ext_resource type="Texture2D" uid="uid://cwn60yw8to64x" path="res://assets/dungeon_asset.png" id="1_sy5lo"]
+[ext_resource type="Script" uid="uid://dlwrku64k1wfc" path="res://scripts/weapons/ninja_weapon.gd" id="1_wi6fd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wi6fd"]
+radius = 2.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ofp7"]
+atlas = ExtResource("1_sy5lo")
+region = Rect2(1504, 800, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jes75"]
+atlas = ExtResource("1_sy5lo")
+region = Rect2(1536, 800, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8bp44"]
+atlas = ExtResource("1_sy5lo")
+region = Rect2(1568, 800, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5swg1"]
+atlas = ExtResource("1_sy5lo")
+region = Rect2(1600, 800, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1k3ye"]
+atlas = ExtResource("1_sy5lo")
+region = Rect2(1632, 800, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vntds"]
+atlas = ExtResource("1_sy5lo")
+region = Rect2(1664, 800, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cb30j"]
+atlas = ExtResource("1_sy5lo")
+region = Rect2(1696, 800, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hvnkp"]
+atlas = ExtResource("1_sy5lo")
+region = Rect2(1728, 800, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ks3q7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ofp7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jes75")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8bp44")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5swg1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1k3ye")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vntds")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cb30j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hvnkp")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 20.0
+}]
+
+[node name="ninja_weapon" type="Area2D" unique_id=817065111]
+collision_mask = 4
+script = ExtResource("1_wi6fd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=265658194]
+shape = SubResource("CircleShape2D_wi6fd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=555332213]
+sprite_frames = SubResource("SpriteFrames_ks3q7")
+animation = &"idle"
+autoplay = "idle"
+frame = 6
+frame_progress = 0.9987198
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

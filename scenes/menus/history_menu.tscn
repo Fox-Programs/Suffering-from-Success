@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://bxtscmib2fklx"]
+
+[ext_resource type="Script" uid="uid://bdq5jmlw2hk6q" path="res://scripts/history_menu.gd" id="1_wm2ur"]
+[ext_resource type="Texture2D" uid="uid://pvdjvpiguw7r" path="res://assets/Background Main Menu.png" id="2_wm2ur"]
+[ext_resource type="FontFile" uid="uid://chigrvjps4bro" path="res://assets/ui_pack/Font/Kenney Future Narrow.ttf" id="3_4siv7"]
+[ext_resource type="Texture2D" uid="uid://blfyc6qqcoa8i" path="res://assets/ui_pack/PNG/Grey/Double/arrow_decorative_w_small.png" id="4_wm2ur"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wu84c"]
+texture = ExtResource("2_wm2ur")
+modulate_color = Color(0.23031491, 0.23031494, 0.23031494, 1)
+
+[node name="HistoryMenu" type="Control" unique_id=1379251718]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wm2ur")
+
+[node name="Panel" type="Panel" parent="." unique_id=1207241484]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_wu84c")
+
+[node name="Label" type="Label" parent="." unique_id=1945025115]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -496.0
+offset_top = -208.0
+offset_right = 533.0
+offset_bottom = 256.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 10
+theme_override_fonts/font = ExtResource("3_4siv7")
+theme_override_font_sizes/font_size = 30
+text = "Jadis, l'éternité était un don divin, une promesse de paix infinie. Jusqu’à ce que l'Ombre s’abatte sur l’un d'entre nous. 
+
+Béni par la vie, mais porteur de mort, ton existence dévore celle des autres. Ta famille, tes amis, ton monde... tous s'éteignent pour que tu puisses durer.
+ 
+Pour sauver ce qu’il reste, il ne te reste qu'une seule issue : apprendre à mourir."
+autowrap_mode = 2
+
+[node name="ReturnBtn" type="Button" parent="." unique_id=1783683032]
+layout_mode = 1
+offset_right = 103.0
+offset_bottom = 99.0
+icon = ExtResource("4_wm2ur")
+icon_alignment = 1
+
+[connection signal="pressed" from="ReturnBtn" to="." method="_on_return_btn_pressed"]

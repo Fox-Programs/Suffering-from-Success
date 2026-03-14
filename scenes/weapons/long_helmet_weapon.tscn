@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://ck6ssdjkgut51"]
+
+[ext_resource type="Texture2D" uid="uid://cwn60yw8to64x" path="res://assets/dungeon_asset.png" id="1_i3w7b"]
+[ext_resource type="Script" uid="uid://c3y6t3e8qvtc0" path="res://scripts/weapons/long_helmet_weapon.gd" id="1_xaav7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xaav7"]
+radius = 11.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rrhtk"]
+atlas = ExtResource("1_i3w7b")
+region = Rect2(1248, 832, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t2ja1"]
+atlas = ExtResource("1_i3w7b")
+region = Rect2(1280, 832, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ftqfp"]
+atlas = ExtResource("1_i3w7b")
+region = Rect2(1312, 832, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_53oum"]
+atlas = ExtResource("1_i3w7b")
+region = Rect2(1344, 832, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hl8e5"]
+atlas = ExtResource("1_i3w7b")
+region = Rect2(1376, 832, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tvrxg"]
+atlas = ExtResource("1_i3w7b")
+region = Rect2(1408, 832, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i5gqu"]
+atlas = ExtResource("1_i3w7b")
+region = Rect2(1440, 832, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0oli8"]
+atlas = ExtResource("1_i3w7b")
+region = Rect2(1472, 832, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7ct45"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rrhtk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t2ja1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ftqfp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_53oum")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hl8e5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tvrxg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i5gqu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0oli8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
+[node name="long_helmet_weapon" type="Area2D" unique_id=1165875676]
+collision_mask = 4
+script = ExtResource("1_xaav7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1662049560]
+shape = SubResource("CircleShape2D_xaav7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=461959186]
+sprite_frames = SubResource("SpriteFrames_7ct45")
+autoplay = "default"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

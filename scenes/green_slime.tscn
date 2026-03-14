@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://cpj188wa32ulx"]
+
+[ext_resource type="Texture2D" uid="uid://250uqhgmy5ko" path="res://assets/base_assets/sprites/slime_green.png" id="1_eo8br"]
+[ext_resource type="Script" uid="uid://p4gqv14c38uw" path="res://scripts/green_slime.gd" id="1_ngma2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ngma2"]
+atlas = ExtResource("1_eo8br")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_17po2"]
+atlas = ExtResource("1_eo8br")
+region = Rect2(24, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7crg0"]
+atlas = ExtResource("1_eo8br")
+region = Rect2(48, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8gt5w"]
+atlas = ExtResource("1_eo8br")
+region = Rect2(72, 24, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u7pkv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ngma2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_17po2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7crg0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8gt5w")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0pbl4"]
+size = Vector2(14, 12)
+
+[node name="Green_slime" type="Node2D" unique_id=1653642235]
+script = ExtResource("1_ngma2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1532589331]
+sprite_frames = SubResource("SpriteFrames_u7pkv")
+animation = &"idle"
+autoplay = "idle"
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1804317858]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_0pbl4")
+
+[node name="RayCast2DRight" type="RayCast2D" parent="." unique_id=292299697]
+position = Vector2(0, 6)
+target_position = Vector2(7, 0)
+
+[node name="RayCast2D2Left" type="RayCast2D" parent="." unique_id=779271058]
+position = Vector2(0, 6)
+target_position = Vector2(-7, 0)

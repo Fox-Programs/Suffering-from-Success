@@ -1,0 +1,132 @@
+[gd_scene format=3 uid="uid://cktd1v364rfcr"]
+
+[ext_resource type="Script" uid="uid://jamy2qkho7r1" path="res://scripts/menus/end_menu.gd" id="1_c01dn"]
+[ext_resource type="Texture2D" uid="uid://pvdjvpiguw7r" path="res://assets/Background Main Menu.png" id="2_albv7"]
+[ext_resource type="FontFile" uid="uid://c7wk1xdt13fjh" path="res://assets/base_assets/fonts/PixelOperator8-Bold.ttf" id="2_fpl1s"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_87tj7"]
+texture = ExtResource("2_albv7")
+modulate_color = Color(0.23031491, 0.23031494, 0.23031494, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_albv7"]
+font = ExtResource("2_fpl1s")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0aktc"]
+bg_color = Color(0.8992584, 0.8992584, 0.8992584, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.24705882)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pwu44"]
+bg_color = Color(0.47007585, 0.47007585, 0.47007585, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.24705882)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wqo5a"]
+bg_color = Color(0.6624523, 0.66245234, 0.66245216, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.24705882)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.5)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nsqeq"]
+
+[node name="end_menu" type="CanvasLayer" unique_id=642205104]
+script = ExtResource("1_c01dn")
+
+[node name="Panel" type="Panel" parent="." unique_id=457204452]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_87tj7")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1331608859]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -323.0
+offset_right = 576.0
+offset_bottom = 152.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 180
+alignment = 1
+
+[node name="State" type="Label" parent="VBoxContainer" unique_id=1846341147]
+layout_mode = 2
+text = "Etat de cruauté du Player"
+label_settings = SubResource("LabelSettings_albv7")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Description" type="Label" parent="VBoxContainer" unique_id=805728321]
+layout_mode = 2
+text = "Description du paraître du peuple"
+label_settings = SubResource("LabelSettings_albv7")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="TimeLife" type="Label" parent="VBoxContainer" unique_id=1656628390]
+layout_mode = 2
+text = "Temps de vie en jeu"
+label_settings = SubResource("LabelSettings_albv7")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1597445311]
+custom_minimum_size = Vector2(300, 0)
+offset_left = 28.0
+offset_top = 521.0
+offset_right = 1116.0
+offset_bottom = 621.0
+alignment = 1
+
+[node name="Replay" type="Button" parent="HBoxContainer" unique_id=1919995872]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_0aktc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pwu44")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wqo5a")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_nsqeq")
+text = "Replay"
+
+[node name="Quit" type="Button" parent="HBoxContainer" unique_id=1711993262]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_0aktc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pwu44")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wqo5a")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_nsqeq")
+text = "Quit
+"
+
+[connection signal="pressed" from="HBoxContainer/Replay" to="." method="_on_replay_pressed"]
+[connection signal="pressed" from="HBoxContainer/Quit" to="." method="_on_quit_pressed"]

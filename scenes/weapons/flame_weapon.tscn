@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://dac82byhg33py"]
+
+[ext_resource type="Script" uid="uid://cfv5iiakv8pa0" path="res://scripts/weapons/flame_weapon.gd" id="1_fyx0c"]
+[ext_resource type="Texture2D" uid="uid://cwn60yw8to64x" path="res://assets/dungeon_asset.png" id="2_xam70"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h5ooy"]
+radius = 17.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r5xdm"]
+atlas = ExtResource("2_xam70")
+region = Rect2(1216, 736, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b2s15"]
+atlas = ExtResource("2_xam70")
+region = Rect2(1248, 736, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_is5gk"]
+atlas = ExtResource("2_xam70")
+region = Rect2(1280, 736, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h7y0y"]
+atlas = ExtResource("2_xam70")
+region = Rect2(1312, 736, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3t5pr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r5xdm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b2s15")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_is5gk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h7y0y")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
+[node name="flame_weapon" type="Area2D" unique_id=1001748019]
+scale = Vector2(0.6, 0.6)
+collision_mask = 4
+script = ExtResource("1_fyx0c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2053390145]
+shape = SubResource("CircleShape2D_h5ooy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2003639469]
+sprite_frames = SubResource("SpriteFrames_3t5pr")
+autoplay = "default"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

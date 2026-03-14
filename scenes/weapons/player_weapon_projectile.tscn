@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://cji234xvnsybs"]
+
+[ext_resource type="Script" uid="uid://c8jc88ysrjjhe" path="res://scripts/weapons/player_weapon_projectile.gd" id="1_aufxo"]
+[ext_resource type="Texture2D" uid="uid://cwn60yw8to64x" path="res://assets/dungeon_asset.png" id="1_e082w"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0nx0v"]
+radius = 5.0990195
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jwdyn"]
+atlas = ExtResource("1_e082w")
+region = Rect2(1664, 768, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n7frd"]
+atlas = ExtResource("1_e082w")
+region = Rect2(1696, 768, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kq67u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jwdyn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n7frd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
+[node name="player_weapon_projectile" type="Area2D" unique_id=2036922384]
+collision_mask = 2
+script = ExtResource("1_aufxo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1826958534]
+shape = SubResource("CircleShape2D_0nx0v")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2095426402]
+sprite_frames = SubResource("SpriteFrames_kq67u")
+autoplay = "default"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

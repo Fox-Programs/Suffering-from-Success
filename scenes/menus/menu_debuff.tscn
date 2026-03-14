@@ -1,0 +1,207 @@
+[gd_scene format=3 uid="uid://bw3pxfcyk4fpc"]
+
+[ext_resource type="Script" uid="uid://dy7g3mgijyex7" path="res://scripts/menus/menu_debuff.gd" id="1_vjb58"]
+[ext_resource type="Texture2D" uid="uid://ea8wvlh3ym55" path="res://assets/ui_pack/PNG/Grey/Double/button_square_border.png" id="2_ydguf"]
+[ext_resource type="Texture2D" uid="uid://d0ojn5tjwtn0g" path="res://assets/ui_pack/PNG/Red/Double/button_rectangle_depth_line.png" id="3_g3eks"]
+[ext_resource type="Texture2D" uid="uid://hd0euk4r06lo" path="res://assets/ui_animate.png" id="4_v86rl"]
+[ext_resource type="FontFile" uid="uid://bft3wvsup4ktq" path="res://assets/ui_pack/Font/Kenney Future.ttf" id="5_13sgg"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ydguf"]
+texture = ExtResource("2_ydguf")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6cdou"]
+atlas = ExtResource("4_v86rl")
+region = Rect2(448, 48, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i42df"]
+atlas = ExtResource("4_v86rl")
+region = Rect2(480, 48, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7jp70"]
+atlas = ExtResource("4_v86rl")
+region = Rect2(512, 48, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mxgkd"]
+atlas = ExtResource("4_v86rl")
+region = Rect2(544, 48, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g6gyw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6cdou")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i42df")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7jp70")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mxgkd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mj5lg"]
+atlas = ExtResource("3_g3eks")
+region = Rect2(0, 0, 384, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ufwb2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mj5lg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3dmrc"]
+font = ExtResource("5_13sgg")
+font_size = 18
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 0
+shadow_color = Color(0, 0, 0, 0.5882353)
+shadow_offset = Vector2(2, 2)
+
+[node name="Menu" type="CanvasLayer" unique_id=347318127]
+process_mode = 3
+script = ExtResource("1_vjb58")
+
+[node name="Panel" type="Panel" parent="." unique_id=1617078895]
+custom_minimum_size = Vector2(100, 100)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -352.625
+offset_top = -190.25
+offset_right = 352.625
+offset_bottom = 190.25
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_ydguf")
+
+[node name="animated_choice" type="AnimatedSprite2D" parent="Panel" unique_id=1671518305]
+position = Vector2(352.625, 190.25002)
+scale = Vector2(17.625, 9.499999)
+sprite_frames = SubResource("SpriteFrames_g6gyw")
+autoplay = "default"
+frame_progress = 0.30310956
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Panel/animated_choice" unique_id=2098123263]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -31.03546
+offset_top = -30.94737
+offset_right = -1.0212746
+offset_bottom = -0.9473686
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Contour 1" type="AnimatedSprite2D" parent="Panel/animated_choice/VBoxContainer2" unique_id=362299214]
+position = Vector2(15.0075445, 4.947369)
+scale = Vector2(0.078159586, 0.078)
+sprite_frames = SubResource("SpriteFrames_ufwb2")
+autoplay = "default"
+
+[node name="Label Choice" type="Label" parent="Panel/animated_choice/VBoxContainer2/Contour 1" unique_id=367797829]
+offset_left = -176.63995
+offset_top = -48.60481
+offset_right = 175.05103
+offset_bottom = 39.367695
+text = "Power effect"
+label_settings = SubResource("LabelSettings_3dmrc")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Btn 1" type="Button" parent="Panel/animated_choice/VBoxContainer2/Contour 1" unique_id=1896983830]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -192.0
+offset_top = -64.0
+offset_right = -189.88141
+offset_bottom = -64.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Contour 2" type="AnimatedSprite2D" parent="Panel/animated_choice/VBoxContainer2" unique_id=623996908]
+position = Vector2(15.008, 14.898526)
+scale = Vector2(0.078, 0.07806579)
+sprite_frames = SubResource("SpriteFrames_ufwb2")
+autoplay = "default"
+
+[node name="Label Choice" type="Label" parent="Panel/animated_choice/VBoxContainer2/Contour 2" unique_id=674448808]
+offset_left = -176.63995
+offset_top = -48.60481
+offset_right = 175.05103
+offset_bottom = 39.367695
+text = "Power effect"
+label_settings = SubResource("LabelSettings_3dmrc")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Btn 2" type="Button" parent="Panel/animated_choice/VBoxContainer2/Contour 2" unique_id=1158430685]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -195.06682
+offset_top = -69.73749
+offset_right = -190.58986
+offset_bottom = -69.73749
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Contour 3" type="AnimatedSprite2D" parent="Panel/animated_choice/VBoxContainer2" unique_id=2073249149]
+position = Vector2(15.008, 24.877897)
+scale = Vector2(0.078, 0.07838818)
+sprite_frames = SubResource("SpriteFrames_ufwb2")
+autoplay = "default"
+
+[node name="Label Choice" type="Label" parent="Panel/animated_choice/VBoxContainer2/Contour 3" unique_id=962313971]
+offset_left = -176.63995
+offset_top = -48.60481
+offset_right = 175.05103
+offset_bottom = 39.367695
+text = "Power effect"
+label_settings = SubResource("LabelSettings_3dmrc")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Btn 3" type="Button" parent="Panel/animated_choice/VBoxContainer2/Contour 3" unique_id=1239552620]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -195.54878
+offset_top = -65.37633
+offset_right = -189.88997
+offset_bottom = -63.999985
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Panel/animated_choice/VBoxContainer2/Contour 1/Btn 1" to="." method="_on_btn_1_pressed"]
+[connection signal="pressed" from="Panel/animated_choice/VBoxContainer2/Contour 2/Btn 2" to="." method="_on_btn_2_pressed"]
+[connection signal="pressed" from="Panel/animated_choice/VBoxContainer2/Contour 3/Btn 3" to="." method="_on_btn_3_pressed"]

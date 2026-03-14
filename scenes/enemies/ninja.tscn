@@ -1,0 +1,140 @@
+[gd_scene format=3 uid="uid://ddsky50yqeeif"]
+
+[ext_resource type="Script" uid="uid://byigsq3k180wu" path="res://scripts/enemies/ninja.gd" id="1_4i837"]
+[ext_resource type="Texture2D" uid="uid://duyy52a4agni7" path="res://assets/Characters_sprites/Char ninja/Character 1.png" id="2_kpdli"]
+[ext_resource type="PackedScene" uid="uid://b7t23cc2mirqo" path="res://scenes/weapons/ninja_weapon.tscn" id="2_r7j1o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jja84"]
+atlas = ExtResource("2_kpdli")
+region = Rect2(0, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_he3yg"]
+atlas = ExtResource("2_kpdli")
+region = Rect2(64, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xddcl"]
+atlas = ExtResource("2_kpdli")
+region = Rect2(128, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sun3n"]
+atlas = ExtResource("2_kpdli")
+region = Rect2(192, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_orogn"]
+atlas = ExtResource("2_kpdli")
+region = Rect2(256, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n7gvg"]
+atlas = ExtResource("2_kpdli")
+region = Rect2(320, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7k6ku"]
+atlas = ExtResource("2_kpdli")
+region = Rect2(384, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5v5h8"]
+atlas = ExtResource("2_kpdli")
+region = Rect2(448, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ds2mx"]
+atlas = ExtResource("2_kpdli")
+region = Rect2(512, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_efu11"]
+atlas = ExtResource("2_kpdli")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3nv4n"]
+atlas = ExtResource("2_kpdli")
+region = Rect2(64, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x5ru0"]
+atlas = ExtResource("2_kpdli")
+region = Rect2(128, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1k8l0"]
+atlas = ExtResource("2_kpdli")
+region = Rect2(192, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d68ed"]
+atlas = ExtResource("2_kpdli")
+region = Rect2(256, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4um0d"]
+atlas = ExtResource("2_kpdli")
+region = Rect2(320, 128, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ed77w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jja84")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_he3yg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xddcl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sun3n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_orogn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n7gvg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7k6ku")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5v5h8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ds2mx")
+}],
+"loop": false,
+"name": &"die",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_efu11")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3nv4n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x5ru0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1k8l0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d68ed")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4um0d")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tcxad"]
+size = Vector2(17, 29)
+
+[node name="Ninja" type="CharacterBody2D" unique_id=509939734 groups=["enemies"]]
+collision_layer = 2
+script = ExtResource("1_4i837")
+weapon_ninja = ExtResource("2_r7j1o")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1176714054]
+sprite_frames = SubResource("SpriteFrames_ed77w")
+animation = &"die"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=925003334]
+position = Vector2(-1.5, 1.5)
+shape = SubResource("RectangleShape2D_tcxad")

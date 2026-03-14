@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://ce2vi234g7yd5"]
+
+[ext_resource type="Script" uid="uid://dst08igiomq1m" path="res://scripts/audio_stream_player.gd" id="2_ibx2e"]
+[ext_resource type="AudioStream" uid="uid://bllwfuoeso03e" path="res://assets/SFX/time_for_adventure.mp3" id="2_qnihg"]
+[ext_resource type="AudioStream" uid="uid://bkm11i5rouvi2" path="res://assets/SFX/Shatter_the_Silence.mp3" id="3_qnihg"]
+[ext_resource type="AudioStream" uid="uid://8lji7mgwp8nj" path="res://assets/SFX/tap.wav" id="4_ejojg"]
+[ext_resource type="AudioStream" uid="uid://mmcju2t21bg" path="res://assets/ui_pack/Sounds/tap-a.ogg" id="4_wia2r"]
+
+[node name="Music" type="AudioStreamPlayer" unique_id=145046706]
+process_mode = 3
+volume_db = 7.569
+bus = &"Music"
+script = ExtResource("2_ibx2e")
+
+[node name="music_menu_file" type="AudioStreamPlayer2D" parent="." unique_id=1202444382]
+stream = ExtResource("2_qnihg")
+bus = &"Music"
+parameters/looping = true
+
+[node name="music_game_file" type="AudioStreamPlayer2D" parent="." unique_id=1917793792]
+stream = ExtResource("3_qnihg")
+bus = &"Music"
+parameters/looping = true
+
+[node name="sound_click_file" type="AudioStreamPlayer2D" parent="." unique_id=265137545]
+stream = ExtResource("4_wia2r")
+bus = &"SFX"
+
+[node name="sound_tap_file" type="AudioStreamPlayer2D" parent="." unique_id=258394601]
+stream = ExtResource("4_ejojg")
+bus = &"SFX"
+
+[connection signal="finished" from="." to="." method="_on_finished"]

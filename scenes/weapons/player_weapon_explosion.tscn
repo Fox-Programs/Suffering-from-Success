@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://dnhnah5kinf6u"]
+
+[ext_resource type="Texture2D" uid="uid://cwn60yw8to64x" path="res://assets/dungeon_asset.png" id="1_2ad0l"]
+[ext_resource type="Script" uid="uid://cokhxp4caswpk" path="res://scripts/weapons/player_weapon_explosion.gd" id="1_3mjpl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3mjpl"]
+radius = 18.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ybcj"]
+atlas = ExtResource("1_2ad0l")
+region = Rect2(480, 800, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vt1ek"]
+atlas = ExtResource("1_2ad0l")
+region = Rect2(512, 800, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gjjba"]
+atlas = ExtResource("1_2ad0l")
+region = Rect2(544, 800, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ktc6n"]
+atlas = ExtResource("1_2ad0l")
+region = Rect2(576, 800, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_etwm2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ybcj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vt1ek")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gjjba")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ktc6n")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
+[node name="player_weapon_explosion" type="Area2D" unique_id=1768647664]
+modulate = Color(1, 1, 1, 0.3882353)
+scale = Vector2(0.1, 0.1)
+script = ExtResource("1_3mjpl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1843477861]
+shape = SubResource("CircleShape2D_3mjpl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=828145716]
+modulate = Color(1, 1, 1, 0.35686275)
+sprite_frames = SubResource("SpriteFrames_etwm2")
+autoplay = "default"
+frame = 1
+frame_progress = 0.12276887

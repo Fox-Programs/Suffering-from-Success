@@ -1,0 +1,143 @@
+[gd_scene format=3 uid="uid://b45vawordm7fy"]
+
+[ext_resource type="Script" uid="uid://dfgy5lgdwff8q" path="res://scripts/menus/difficulty_menu.gd" id="1_ugo8b"]
+[ext_resource type="Texture2D" uid="uid://pvdjvpiguw7r" path="res://assets/Background Main Menu.png" id="2_w5ek2"]
+[ext_resource type="FontFile" uid="uid://chigrvjps4bro" path="res://assets/ui_pack/Font/Kenney Future Narrow.ttf" id="3_qkx4s"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wu84c"]
+texture = ExtResource("2_w5ek2")
+modulate_color = Color(0.23031491, 0.23031494, 0.23031494, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vue75"]
+bg_color = Color(0.8992584, 0.8992584, 0.8992584, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.24705882)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ekxnf"]
+bg_color = Color(0.47007585, 0.47007585, 0.47007585, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.24705882)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bqqt6"]
+bg_color = Color(0.6624523, 0.66245234, 0.66245216, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.24705882)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.5)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ekxnf"]
+
+[node name="DifficultyMenu" type="Control" unique_id=1379251718]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ugo8b")
+
+[node name="Panel" type="Panel" parent="." unique_id=1207241484]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_wu84c")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=600285470]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -253.875
+offset_top = -112.25
+offset_right = 253.875
+offset_bottom = 152.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Easy" type="Button" parent="VBoxContainer" unique_id=597314345]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_vue75")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ekxnf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_bqqt6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ekxnf")
+text = "Easy"
+
+[node name="Medium" type="Button" parent="VBoxContainer" unique_id=52792270]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_vue75")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ekxnf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_bqqt6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ekxnf")
+text = "Medium"
+
+[node name="Hard" type="Button" parent="VBoxContainer" unique_id=1049434912]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_vue75")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ekxnf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_bqqt6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ekxnf")
+text = "Hard"
+
+[node name="Extreme" type="Button" parent="VBoxContainer" unique_id=1316964477]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_vue75")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ekxnf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_bqqt6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ekxnf")
+text = "Extreme
+"
+
+[node name="Label" type="Label" parent="." unique_id=1945025115]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -502.0
+offset_top = -244.0
+offset_right = 502.0
+offset_bottom = -176.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 10
+theme_override_fonts/font = ExtResource("3_qkx4s")
+theme_override_font_sizes/font_size = 50
+text = "Choisissez votre difficulté"
+
+[connection signal="pressed" from="VBoxContainer/Easy" to="." method="_on_easy_pressed"]
+[connection signal="pressed" from="VBoxContainer/Medium" to="." method="_on_medium_pressed"]
+[connection signal="pressed" from="VBoxContainer/Hard" to="." method="_on_hard_pressed"]
+[connection signal="pressed" from="VBoxContainer/Extreme" to="." method="_on_extreme_pressed"]

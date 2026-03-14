@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://cj8x4q6yao82w"]
+
+[ext_resource type="Script" uid="uid://blxx4jcxy128" path="res://scripts/weapons/coocker_weapon.gd" id="1_h5ooy"]
+[ext_resource type="Texture2D" uid="uid://cwn60yw8to64x" path="res://assets/dungeon_asset.png" id="1_p1cnf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p1cnf"]
+radius = 16.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h5ooy"]
+atlas = ExtResource("1_p1cnf")
+region = Rect2(608, 768, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r5xdm"]
+atlas = ExtResource("1_p1cnf")
+region = Rect2(640, 768, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b2s15"]
+atlas = ExtResource("1_p1cnf")
+region = Rect2(672, 768, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_is5gk"]
+atlas = ExtResource("1_p1cnf")
+region = Rect2(704, 768, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h7y0y"]
+atlas = ExtResource("1_p1cnf")
+region = Rect2(736, 768, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3t5pr"]
+atlas = ExtResource("1_p1cnf")
+region = Rect2(768, 768, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q2mkw"]
+atlas = ExtResource("1_p1cnf")
+region = Rect2(800, 768, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jcoi4"]
+atlas = ExtResource("1_p1cnf")
+region = Rect2(832, 768, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5sgjr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h5ooy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r5xdm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b2s15")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_is5gk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h7y0y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3t5pr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q2mkw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jcoi4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
+[node name="coocker_weapon" type="Area2D" unique_id=1373973096]
+scale = Vector2(0.5, 0.5)
+collision_mask = 4
+script = ExtResource("1_h5ooy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2051677424]
+shape = SubResource("CircleShape2D_p1cnf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1841064991]
+sprite_frames = SubResource("SpriteFrames_5sgjr")
+autoplay = "default"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
