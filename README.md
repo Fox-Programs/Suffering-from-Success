@@ -1,4 +1,4 @@
-# 🌑 Apprendre à Mourir
+# 🌑 Suffering from Success
 
 > *"Jadis, l'éternité était un don divin. Jusqu’à ce que l'Ombre s’abatte sur l’un d'entre nous."*
 
