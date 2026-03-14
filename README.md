@@ -2,7 +2,7 @@
 
 > *"Jadis, l'éternité était un don divin. Jusqu’à ce que l'Ombre s’abatte sur l’un d'entre nous."*
 
-Ce projet a été réalisé dans le cadre d'une **Game Jam de 3 semaines**. Le défi majeur ? Découvrir et maîtriser le moteur **Godot 4** (imposé pour l'événement) tout en créant une expérience de jeu complète.
+Ce projet a été réalisé dans le cadre d'une **Game Jam de 3 semaines**. Le défi majeur ? Découvrir et maîtriser le moteur **Godot 4** (imposé pour l'événement) tout en créant une expérience de jeu complète avec pour thème le subversif.
 
 ---
 
